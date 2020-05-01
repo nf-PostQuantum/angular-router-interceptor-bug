@@ -50,8 +50,24 @@ Uncaught Error: Can't resolve all parameters for AccountInterceptor: (?).
 I have created a [minimal repo](https://github.com/nf-PostQuantum/angular-router-interceptor-bug) with all the code to reproduce.
 
 ```sh
-git clone 
+git clone https://github.com/nf-PostQuantum/angular-router-interceptor-bug.git
+npm install
+npm run start
 ```
+Open browser to localhost:4200
+Open console (note no text on page)
+
+In `package.json` downgrade to:
+```
+    "@angular-devkit/build-angular": "^0.800.6",
+```
+Re-install and start:
+```sh
+npm install
+npm run start
+```
+Open browser to localhost:4200
+Open console (note text on page & no error)
 
 ## 🔥 Exception or Error
 ```

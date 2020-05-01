@@ -31,25 +31,4 @@ describe('AppComponent', () => {
   it('should create the app', async(() => {
     expect(component).toBeTruthy();
   }));
-
-  it('should have created warnings in storage', () => {
-    [localStorage, sessionStorage].forEach(storage => {
-      const warnings = Object.keys(storage).filter(k => k.startsWith(component['storageWarningPrefix']));
-      expect(warnings.length > 0);
-    });
-  });
-
-  describe('createStorageWarnings', () => {
-    it('should clear out previous warnings', () => {
-      const key = `${component['storageWarningPrefix']} TEST INSERT`;
-
-      localStorage.setItem(key, 'foo');
-      sessionStorage.setItem(key, 'foo');
-
-      component['createStorageWarnings']();
-
-      expect(localStorage.getItem(key)).toBeNull();
-      expect(sessionStorage.getItem(key)).toBeNull();
-    });
-  });
 });
