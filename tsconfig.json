@@ -1,0 +1,35 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "paths": {
+      "@biocheck/*": [ "src/app/_bio-check/*" ],
+      "@layout/*": [ "src/app/_layout/*" ],
+      "@shared/*": [ "src/app/_shared/*" ],
+      "@app/*": [ "src/app/*" ],
+      "@testing/*": [ "src/testing/*" ],
+    },
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "es2018.promise",
+      "dom"
+    ]
+  },
+  "exclude": [
+    "src/environments/environment.*.ts"
+  ]
+}
